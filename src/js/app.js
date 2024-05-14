@@ -3,8 +3,34 @@ import imgGame from '../img/goblin.png'
 const fields = document.querySelectorAll(".fields");
 const img = document.createElement("img");
 
+
 img.src = imgGame;
 fields[0].append(img);
+const number = randomA;
+
+  function demo() { 
+    function getRandom(max) {
+    let randomA = Math.floor(Math.random() * max);
+    while (randomA === number) {
+      randomA = Math.floor(Math.random() * max);
+          } 
+          number = randomA; 
+          return number; 
+        }
+    }
+    
+    //const interval = setInterval(() => demo(), 1000);
+
+
+
+
+
+
+
+
+
+
+
 
 
 
