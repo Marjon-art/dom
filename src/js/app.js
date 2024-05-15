@@ -1,6 +1,7 @@
+/** Размер сетки */
 const boardSize = 4;
 
-/** Генерируем таблицу */
+/** Генерируем таблицу с ячейками и подлючаем ее в index.html */
 const field = document.createElement("div");
 field.className = "field";
 
@@ -15,7 +16,7 @@ document.body.appendChild(field);
 const cells = Array.from(document.querySelectorAll(".cell"));
 
 /** Функция удаления и добавления изображения в ячейку при помощи CSS-класса */
-function goblinImg(index, number) {
+function manageImage(index, number) {
   if (index !== -1) {
     cells[index].classList.remove("goblin");
   }
@@ -32,10 +33,10 @@ setInterval(() => {
   /** Генерируем случайное число */
   let number = Math.floor(Math.random() * cells.length);
 
-  /** Проверяем, равно ли случайное число индексу ячейки */
-  if (number === index) {
+  /** Выполняем цикл до тех пор, пока случайное число будет отличаться от индекса ячейки */
+  while (number === index) {
     number = Math.floor(Math.random() * cells.length);
-  } else {
-    goblinImg(index, number);
   }
+
+  manageImage(index, number);
 }, 1000);
