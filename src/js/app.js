@@ -2,11 +2,11 @@ import '../css/style.css'
 import imgGame from '../img/goblin.png'
 const fields = document.querySelectorAll(".fields");
 const img = document.createElement("img");
-
+let number = 0; 
 
 img.src = imgGame;
-fields[0].append(img);
-const number = randomA;
+fields[number].append(img);
+
 
   function demo() { 
     function getRandom(max) {
@@ -16,10 +16,12 @@ const number = randomA;
           } 
           number = randomA; 
           return number; 
-        }
+        } 
+        getRandom(16);
+        fields[number].append(img);
     }
     
-    //const interval = setInterval(() => demo(), 1000);
+    let interval = setInterval(demo, 1000);
 
 
 
@@ -32,10 +34,3 @@ const number = randomA;
 
 
 
-
-
-
-// добавь картинку в ячейку поля, кодом 
-//метод Math.random отработал, вернул, например, 10. 
-//Подставь вместо Math.random() в выражение - Math.random().fields[6].append(img); - эту 10. 
-//Прочитай что получилось, как это будет работать 
